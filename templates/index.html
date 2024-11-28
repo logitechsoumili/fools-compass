@@ -9,9 +9,37 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Fool's Compass</h1>
-        <p>This is a simple Flask app to give you bad advice based on your mood.</p>
-        <p>How are you feeling today?</p>
+        <h1>Fool's Compass</h1>
+        <p id="question-text">how are you feeling today?</p>
+        <div class="mood-option">
+            <button class="mood-btn" data-mood="just_vibing_in_ohio">just vibing in ohio</button>
+            <button class="mood-btn" data-mood="mid_no_cap">life is mid, no cap</button>
+            <button class="mood-btn" data-mood="existential_crisis">goofy ahh existential crisis</button>
+            <button class="mood-btn" data-mood="sigma_tantrum">sigma tantrum</button>
+            <button class="mood-btn" data-mood="delulu_state">delulu state</button>
+        </div>
+        <div id="advice-container" class="hidden">
+            <!-- advice will appear here -->
+        </div>
     </div>
+
+    <script>
+        const buttons = document.querySelectorAll(".mood-btn");
+        const adviceContainer = document.getElementById("advice-container");
+        const container = document.querySelector(".container");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", async () => {
+                const mood = button.getAttribute("data-mood");
+                const response = await fetch(`/get_advice/${mood}`);
+                const data = await response.json();
+                adviceContainer.textContent = data.advice;
+
+                // Show the advice box and move everything up
+                adviceContainer.classList.add('revealed');
+                container.classList.add('shifted');
+            });
+        });
+    </script>
 </body>
 </html>
