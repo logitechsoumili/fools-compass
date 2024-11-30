@@ -34,4 +34,14 @@ Deploying the app was a learning curve, especially dealing with dependencies and
 To run the project locally:
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/logitechsoumilifools-compass```
+   git clone https://github.com/logitechsoumilifools-compass
+2. Navigate to the project folder:
+   ```bash
+   cd fools-compass
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+4. Run the app:
+   ```bash
+   python app.py
+5. Open your browser and visit > http://localhost:5000.
