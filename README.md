@@ -44,4 +44,7 @@ To run the project locally:
 4. Run the app:
    ```bash
    python app.py
-5. Open your browser and visit > http://localhost:5000.
+5. Open your browser and visit http://localhost:5000.
+
+## Usage
+Visit https://fools-compass.vercel.app, pick your mood, and let the chaos unfold.
