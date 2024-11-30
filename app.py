@@ -85,4 +85,4 @@ def get_bad_advice(mood):
     return jsonify({"advice": advice})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
